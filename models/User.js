@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
       //   required: true,
-      default: "uploads/2055576.png",
+      default: "uploads\\2055576.png",
     },
   },
   { timestamps: true }

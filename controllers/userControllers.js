@@ -21,8 +21,15 @@ const create = (req, res) => {
     })
     // If there is an avatar, add it //
     if (req.file) {
+        console.log("\nreq.file")
         console.log(req.file)
+        console.log("\nreq.file.path")
+        console.log(req.file.path)
         user.avatar = req.file.path
+    } else {
+        console.log("There is no req.file")
+        console.log("user:")
+        console.log(user)
     }
     // Save the user //
     user.save()
@@ -30,8 +37,18 @@ const create = (req, res) => {
        .catch((err) => res.json({message: err.message}))
 }
 
+const dropCollection = (req, res) => {
+    User.deleteMany()
+       .then(() => res.json({message: "Users dropped!"}))
+       .catch((err) => res.json({message: err.message}))
+
+    // Or
+    // User.deleteMany({}, callback)
+}
+
 export default {
     test,
     read,
     create,
+    dropCollection,
 }

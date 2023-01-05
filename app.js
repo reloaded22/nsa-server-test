@@ -9,9 +9,11 @@ mongoDbConn();
 
 // EXPRESS INSTANCE //
 const app = express();
+
+// MIDDLEWARES //
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("uploads"));
+app.use("/uploads", express.static("uploads"));
 
 // USE THE ROUTES //
 app.use("/", userRouter);
