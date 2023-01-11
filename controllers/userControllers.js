@@ -29,6 +29,8 @@ const create = (req, res) => {
         console.log("\nreq.file.path")
         console.log(req.file.path)
         user.avatar = req.file.path
+        console.log("\nuser:");
+        console.log(user);
     } else {
         console.log("\nThere is no req.file")
         console.log("\nuser:")
