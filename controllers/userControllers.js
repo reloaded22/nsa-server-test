@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 
 const test = (req, res) => {
-    res.json({message: "Hello bitches!"});
+    res.json({message: "Hello World!"});
 }
 
 const read = (req, res) => {
@@ -39,8 +39,7 @@ const create = (req, res) => {
     // Save the user //
     user.save()
        .then((user) => {
-        res.json({user, message: "User saved!"})
-        // res.redirect("http://127.0.0.1:5500/CLIENT/index.html");
+            res.json({user, message: "User saved!"})
         })
        .catch((err) => res.json({message: err.message}))
 }
